@@ -1,0 +1,64 @@
+$Type--noto_sans: 'Noto Sans', sans-serif;
+$Type--palanquin: 'Palanquin', sans-serif;
+
+$Type-weight--medium: 500;
+$Type-weight--semibold: 600;
+$Type-weight--bold: 700;
+
+body {
+    font-family: $Type--palanquin;
+    font-weight: $Type-weight--medium;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h1, .h1 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 60px;
+    line-height: 64px;
+    font-style: italic;
+    margin: 16px 0;
+}
+
+h2, .h2 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 48px;
+    line-height: 52px;
+    font-style: italic;
+    margin: 14px 0;
+}
+
+h3, .h3 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 38px;
+    line-height: 42px;
+    font-style: italic;
+    margin: 12px 0;
+}
+
+h4, .h4 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 28px;
+    line-height: 32px;
+    margin: 10px 0;
+}
+
+h5, .h5 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 7px 0;
+}
+
+h6, .h6 {
+    font-family: $Type--noto_sans;
+    font-weight: $Type-weight--bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 4px 0;
+}

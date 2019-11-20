@@ -1,0 +1,23 @@
+$Grid--column_count: 12;
+$Grid--gutter_width: 15px;
+
+@mixin make-Column($column_count) {
+    width: $column_count * $Grid--column_count;
+}
+
+@mixin make-Column--with_gutter($column_count) {
+    float: left;
+    width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
+    margin-left: $Grid--gutter_width;
+    margin-right: $Grid--gutter_width;
+}
+
+@mixin make-Column--with_gutter_min($column_count, $break_viewport) {
+    margin-left: $Grid--gutter_width;
+    margin-right: $Grid--gutter_width;
+    
+    @media (min-width: $break_viewport) {
+        float: left;
+        width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
+    }
+}

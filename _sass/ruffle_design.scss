@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+@import "ruffle_design/Reset.scss";
+@import "ruffle_design/Clearfix.scss";
+@import "ruffle_design/Color.scss";
+@import "ruffle_design/Viewport.scss";
+@import "ruffle_design/Type.scss";
+@import "ruffle_design/Grid.scss";
+@import "ruffle_design/Container.scss";
+@import "ruffle_design/HeroHeader.scss";
+
+.Content {
+    @include make-Column--with_gutter(12);
+}

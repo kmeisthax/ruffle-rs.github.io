@@ -1,0 +1,63 @@
+$Color--brand_primary: #FFAE00;
+$Color--brand_secondary: #9D6A04;
+$Color--hero_secondary: #0D5AAB;
+$Color--hero_primary: #0E437A;
+$Color--body_primary: #FFF4DD;
+
+@mixin make-Color--body_colorway() {
+    background-color: $Color--body_primary;
+    color: $Color--hero_primary;
+
+    *:link {
+        color: $Color--hero_secondary;
+    }
+
+    *:visited {
+        color: $Color--hero_primary;
+    }
+
+    *:link:hover, *:link:focus,
+    *:visited:hover, *:visited:focus {
+        color: $Color--brand_primary;
+    }
+}
+
+@mixin make-Color--hero_colorway() {
+    background-color: $Color--hero_primary;
+    color: $Color--brand_primary;
+
+    *:link {
+        color: $Color--brand_secondary;
+    }
+
+    *:visited {
+        color: $Color--brand_primary;
+    }
+
+    *:link:hover, *:link:focus,
+    *:visited:hover, *:visited:focus {
+        color: $Color--body_primary;
+    }
+}
+
+@mixin make-Color--brand_colorway() {
+    background-color: $Color--brand_primary;
+    color: $Color--hero_secondary;
+
+    *:link {
+        color: $Color--hero_secondary;
+    }
+
+    *:visited {
+        color: $Color--hero_primary;
+    }
+
+    *:link:hover, *:link:focus,
+    *:visited:hover, *:visited:focus {
+        color: $Color--body_primary;
+    }
+}
+
+body {
+    @include make-Color--body_colorway();
+}

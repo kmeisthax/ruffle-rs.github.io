@@ -1,0 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    //I solemnly swear that Internet Explorer was right about something.
+    box-sizing: border-box;
+}

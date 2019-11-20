@@ -1,0 +1,14 @@
+$Container--md: 768px;
+$Container--lg: 1020px;
+
+.Container {
+    margin: 0 auto;
+
+    @media (min-width: $Viewport--md) {
+        max-width: $Container--md;
+    }
+
+    @media (min-width: $Viewport--lg) {
+        max-width: $Container--lg;
+    }
+}
