@@ -4,6 +4,16 @@
     text-align: center;
 }
 
+.HeroHeader--full_height {
+    display: flex;
+    min-height: 100vh;
+}
+
+.HeroHeader--full_height-content {
+    @extend .Container;
+    margin: auto;
+}
+
 .HeroHeader-download_chip {
     @extend .clearfix;
     @include make-Column--with_gutter_min(6, $Viewport--md);

@@ -7,44 +7,9 @@ title: Ruffle
 
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-{%- include head.html -%}
+{%- include rds-head.html -%}
 
 <body>
-	<div class="wrapper">
-		<main>
-			<header>
-				<canvas id="logo" width="400" height="200"></canvas>
-				<script type="module">
-					import init, { Player } from "./assets/ruffle.js";
-					async function run() {
-						// Load and initialize WebAssembly module asynchronously.
-						await init();
-						fetch("assets/logo-anim.swf")
-							.then(response => {
-								response.arrayBuffer().then(data => {
-									let logoCanvas = document.getElementById("logo");
-									let player = Player.new(logoCanvas, new Uint8Array(data));
-								})
-							});
-					}
-					run();
-				</script>
-			</header>
-
-			<p>
-				<em>ruffle</em> is a Flash Player emulator built in the Rust programming language.
-			</p>
-
-			<ul>
-				<li><a href="{{ site.github_url }}">source</a></li>
-				<li><a
-						href="http://ruffle-rs.s3-website-us-west-1.amazonaws.com/builds/web-demo/index.html?file=synj1.swf">demo</a>
-				</li>
-			</ul>
-		</main>
-
-	</div>
-
 	<!-- start GitHub corner -->
 	<a href="{{ site.github_url }}" class="github-corner" aria-label="View source on GitHub"><svg width="150"
 			height="150" viewBox="0 0 250 250"
@@ -58,6 +23,38 @@ title: Ruffle
 				fill="currentColor" class="octo-body"></path>
 		</svg></a>
 	<!-- end GitHub corner -->
+
+	<header class="HeroHeader HeroHeader--full_height">
+		<div class="HeroHeader-content HeroHeader--full_height-content">
+			<canvas id="logo" width="400" height="200"></canvas>
+			<script type="module">
+				import init, { Player } from "./assets/ruffle.js";
+				async function run() {
+					// Load and initialize WebAssembly module asynchronously.
+					await init();
+					fetch("assets/logo-anim.swf")
+						.then(response => {
+							response.arrayBuffer().then(data => {
+								let logoCanvas = document.getElementById("logo");
+								let player = Player.new(logoCanvas, new Uint8Array(data));
+							})
+						});
+				}
+				run();
+			</script>
+
+			<p>
+				<em>ruffle</em> is a Flash Player emulator built in the Rust programming language.
+			</p>
+
+			<ul>
+				<li><a href="{{ site.github_url }}">source</a></li>
+				<li><a
+						href="http://ruffle-rs.s3-website-us-west-1.amazonaws.com/builds/web-demo/index.html?file=synj1.swf">demo</a>
+				</li>
+			</ul>
+		</div>
+	</header>
 
 </body>
 
