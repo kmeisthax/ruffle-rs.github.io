@@ -1,0 +1,41 @@
+$SiteHeader-banner_height: 50px;
+
+.SiteHeader {
+    @extend .clearfix;
+    @include make-Color--hero_colorway();
+
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    z-index: 1;
+}
+
+.SiteHeader-menu {
+    list-style: none inside none;
+    float: right;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: $SiteHeader-banner_height;
+    margin: 0;
+    padding: 0;
+
+    li {
+        padding: 5px;
+    }
+}
+
+.SiteHeader-brand {
+    display: block;
+    float: left;
+    height: $SiteHeader-banner_height;
+    padding: 10px;
+}
+
+.SiteHeader-brand_logo {
+    width: auto;
+    height: 100%;
+}

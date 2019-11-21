@@ -7,8 +7,7 @@
 @import "ruffle_design/Type.scss";
 @import "ruffle_design/Grid.scss";
 @import "ruffle_design/Container.scss";
-@import "ruffle_design/HeroHeader.scss";
 
-.Content {
-    @include make-Column--with_gutter(12);
-}
+@import "ruffle_design/SiteHeader.scss";
+@import "ruffle_design/GithubCorner.scss";
+@import "ruffle_design/HeroHeader.scss";
