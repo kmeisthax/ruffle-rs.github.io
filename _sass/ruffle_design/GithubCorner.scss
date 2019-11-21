@@ -1,6 +1,14 @@
-.github-corner svg {
+$GithubCorner--width: 150px;
+
+.github-corner {
     position: absolute;
+    top: 0;
     right: 0;
+
+    z-index: 1;
+}
+
+.github-corner svg {
     fill: $Color--brand_primary;
 }
 

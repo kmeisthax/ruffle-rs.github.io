@@ -1,14 +1,27 @@
-$SiteHeader-banner_height: 50px;
+$SiteHeader-banner--height: 50px;
 
 .SiteHeader {
     @extend .clearfix;
     @include make-Color--hero_colorway();
 
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
 
-    z-index: 1;
+    z-index: 2;
+
+    &.is-SiteHeader--at_top {
+        background: transparent;
+        padding-right: $GithubCorner--width;
+
+        transition: background 0.5s 0.15s, padding-right 0.5s;
+    }
+
+    &.is-SiteHeader--scrolled {
+        padding-right: 0;
+
+        transition: background 0.5s, padding-right 0.5s 0.15s;
+    }
 }
 
 .SiteHeader-menu {
@@ -19,19 +32,29 @@ $SiteHeader-banner_height: 50px;
     flex-direction: row;
     align-items: center;
 
-    height: $SiteHeader-banner_height;
+    height: $SiteHeader-banner--height;
     margin: 0;
     padding: 0;
 
     li {
         padding: 5px;
     }
+
+    :link, :visited {
+        color: $Color--body_primary;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: $Color--body_primary;
+            text-decoration: underline;
+        }
+    }
 }
 
 .SiteHeader-brand {
     display: block;
     float: left;
-    height: $SiteHeader-banner_height;
+    height: $SiteHeader-banner--height;
     padding: 10px;
 }
 
