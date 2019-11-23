@@ -1,5 +1,6 @@
-$GithubCorner--width_sm: 75px;
-$GithubCorner--width_md: 100px;
+$GithubCorner--width: 75px;
+$GithubCorner--width_sm: 100px;
+$GithubCorner--width_md: 120px;
 $GithubCorner--width_lg: 150px;
 
 .GithubCorner {
@@ -8,6 +9,7 @@ $GithubCorner--width_lg: 150px;
     right: 0;
 
     z-index: $Stacking--github_corner_level;
+    width: $GithubCorner--width;
 
     @media (min-width: $Viewport--sm) {
         width: $GithubCorner--width_sm;
