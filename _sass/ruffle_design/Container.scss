@@ -2,6 +2,8 @@ $Container--md: 768px;
 $Container--lg: 1020px;
 
 .Container {
+    @extend .clearfix;
+    
     margin: 0 auto;
     width: 100%;
 

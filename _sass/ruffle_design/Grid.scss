@@ -2,29 +2,30 @@ $Grid--column_count: 12;
 $Grid--gutter_width: 15px;
 
 @mixin make-Column($column_count) {
-    width: $column_count * $Grid--column_count;
+    float: $direction;
+    width: #{($column_count / $Grid--column_count) * 100%};
 }
 
-@mixin make-Column--min($column_count, $break_viewport) {
+@mixin make-Column--min($column_count, $break_viewport, $direction: left) {
     @media (min-width: $break_viewport) {
-        float: left;
-        width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
+        float: $direction;
+        width: #{($column_count / $Grid--column_count) * 100%};
     }
 }
 
-@mixin make-Column--with_gutter($column_count) {
-    float: left;
+@mixin make-Column--with_gutter($column_count, $direction: left) {
+    float: $direction;
     width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
     margin-left: $Grid--gutter_width;
     margin-right: $Grid--gutter_width;
 }
 
-@mixin make-Column--with_gutter_min($column_count, $break_viewport) {
+@mixin make-Column--with_gutter_min($column_count, $break_viewport, $direction: left) {
     margin-left: $Grid--gutter_width;
     margin-right: $Grid--gutter_width;
     
     @media (min-width: $break_viewport) {
-        float: left;
+        float: $direction;
         width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
     }
 }

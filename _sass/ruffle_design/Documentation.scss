@@ -2,11 +2,12 @@ $Documentation--breakpoint: $Viewport--md;
 $Documentation--section_padding: 50px;
 
 .Documentation {
-    @extend .clearfix;
+    @extend .Container;
 }
 
 .Documentation-table_of_contents {
-    @include make-Column--min(3, $Documentation--breakpoint);
+    @include make-Column--min(4, $Documentation--breakpoint, right);
+    @include make-Column--min(3, $Viewport--lg, right);
 
     display: block;
     position: sticky;
@@ -98,7 +99,8 @@ $Documentation--section_padding: 50px;
 }
 
 .Documentation-content {
-    @include make-Column--with_gutter_min(9, $Documentation--breakpoint);
+    @include make-Column--with_gutter_min(8, $Documentation--breakpoint, right);
+    @include make-Column--with_gutter_min(9, $Viewport--lg, right);
 
     @media (min-width: $Documentation--breakpoint) {
         margin-top: $Documentation--section_padding;
