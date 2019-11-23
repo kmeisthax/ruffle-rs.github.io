@@ -12,9 +12,20 @@ $SiteHeader-banner--height: 50px;
 
     &.is-SiteHeader--at_top {
         background: transparent;
-        padding-right: $GithubCorner--width;
 
         transition: background 0.5s 0.15s, padding-right 0.5s;
+        
+        @media (min-width: $Viewport--sm) {
+            padding-right: $GithubCorner--width_sm;
+        }
+
+        @media (min-width: $Viewport--md) {
+            padding-right: $GithubCorner--width_md;
+        }
+
+        @media (min-width: $Viewport--lg) {
+            padding-right: $GithubCorner--width_lg;
+        }
     }
 
     &.is-SiteHeader--scrolled {

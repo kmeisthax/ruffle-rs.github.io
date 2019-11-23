@@ -1,18 +1,35 @@
-$GithubCorner--width: 150px;
+$GithubCorner--width_sm: 75px;
+$GithubCorner--width_md: 100px;
+$GithubCorner--width_lg: 150px;
 
-.github-corner {
+.GithubCorner {
     position: absolute;
     top: 0;
     right: 0;
 
     z-index: $Stacking--github_corner_level;
+
+    @media (min-width: $Viewport--sm) {
+        width: $GithubCorner--width_sm;
+    }
+
+    @media (min-width: $Viewport--md) {
+        width: $GithubCorner--width_md;
+    }
+
+    @media (min-width: $Viewport--lg) {
+        width: $GithubCorner--width_lg;
+    }
 }
 
-.github-corner svg {
+.GithubCorner svg {
     fill: $Color--brand_primary;
+
+    width: 100%;
+    height: auto;
 }
 
-.github-corner:hover .octo-arm, .github-corner:focus .octo-arm {
+.GithubCorner:hover .octo-arm, .GithubCorner:focus .octo-arm {
     animation: octocat-wave 560ms ease-in-out
 }
 
@@ -34,15 +51,15 @@ $GithubCorner--width: 150px;
 }
 
 @media (max-width:500px) {
-    .github-corner:hover .octo-arm {
+    .GithubCorner:hover .octo-arm {
         animation: none
     }
 
-    .github-corner .octo-arm {
+    .GithubCorner .octo-arm {
         animation: octocat-wave 560ms ease-in-out
     }
 }
 
-.github-corner:focus svg {
+.GithubCorner:focus svg {
     fill: $Color--brand_secondary;
 }
