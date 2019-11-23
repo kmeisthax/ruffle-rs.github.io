@@ -1,14 +1,20 @@
+$HeroHeader--vertical_padding: 100px;
+
 .HeroHeader {
     @extend .clearfix;
     @include make-Color--hero_colorway();
 
     position: relative;
+    display: flex;
     text-align: center;
+    padding-top: max($SiteHeader-banner--height, $HeroHeader--vertical_padding);
+    padding-bottom: $HeroHeader--vertical_padding;
 }
 
 .HeroHeader--full_height {
-    display: flex;
-    min-height: 100vh;
+    @media (min-aspect-ratio: 1/1) {
+        min-height: 100vh;
+    }
 }
 
 .HeroHeader--full_height-content {
