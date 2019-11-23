@@ -146,10 +146,10 @@ title: Ruffle
 				</p>
 			{% endcapture %}
 			
-			<div class="Documentation-table_of_contents">
+			<table-of-contents class="Documentation-table_of_contents">
 				<button class="Documentation-toc_reveal" type="button">Skip To Section</button>
 				{% include toc.html html=content sanitize=true h_min = 1 %}
-			</div>
+			</table-of-contents>
 
 			<div class="Documentation-content">
 				{{content}}

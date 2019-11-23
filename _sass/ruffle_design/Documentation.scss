@@ -8,19 +8,25 @@ $Documentation--section_padding: 50px;
 .Documentation-table_of_contents {
     @include make-Column--with_gutter_min(3, $Documentation--breakpoint);
 
+    display: block;
     position: sticky;
     top: $SiteHeader-banner--height;
-    max-height: calc(100vh - #{$SiteHeader-banner--height});
-    overflow: auto;
-
+    height: 50px;
     margin-top: $Documentation--section_padding;
 
     ul {
-        display: none;
-
         list-style: none inside none;
         margin: 0;
         padding: 0;
+
+        overflow: auto;
+    
+        max-height: 0vh;
+        transition: max-height 0.5s;
+    }
+    
+    &[revealed] ul {
+        max-height: calc(100vh - #{$SiteHeader-banner--height});
     }
 
     li {
@@ -39,8 +45,10 @@ $Documentation--section_padding: 50px;
     }
 
     @media (min-width: $Documentation--breakpoint) {
+        height: auto;
+        
         ul {
-            display: block;
+            max-height: calc(100vh - #{$SiteHeader-banner--height});
         }
     }
 }
