@@ -57,21 +57,96 @@ title: Ruffle
 					run();
 				</script>
 
-				<p>
+				<h2 class="h3">
 					<em>ruffle</em> is a Flash Player emulator built in the Rust programming language.
+				</h2>
+			</div>
+		</header>
+
+		<section class="Container">
+			<div class="Container-content">
+				<h1>Get Ruffle Player</h1>
+				<p>
+					Adobe has called it: Flash Player will reach end-of-life in
+					2020. To keep Flash content working and playable, install
+					Ruffle.
 				</p>
-				
-				<div class="HeroHeader-download_chip">
+
+				<div class="DownloadChip">
 					<h3>Ruffle for Users</h3>
 					<p>Extension install coming soon</p>
 				</div>
 
-				<div class="HeroHeader-download_chip">
+				<p>
+					Play legacy Flash content across the web using our player
+					extension. Once installed, Flash content will automatically
+					play in Ruffle instead of Adobe's legacy player. Ruffle is
+					Free Software and will be maintained for the forseeable
+					future, ensuring Flash content will continue to play.
+				</p>
+
+				<h2>For Web Developers</h2>
+				
+				<div class="DownloadChip">
 					<h3>Ruffle for Websites</h3>
 					<p>Stand-alone library coming soon</p>
 				</div>
+
+				<p>
+					Enable your legacy Flash content on modern web browsers,
+					including the mobile web. Installing and configuring Ruffle
+					is easy: just include the library and it's configuration,
+					and all static Flash content will automatically play in
+					Ruffle.
+				</p>
+
+				<pre>&lt;script type="text/javascript"&gt;
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "polyfills": ["static-content"],
+        "public_path": "assets/ruffle/"
+    };
+&lt;/script&gt;
+&lt;script src="assets/ruffle/ruffle.js" /&gt;</pre>
+
+				<p>This configuration has multiple parts:</p>
+				
+				<ol>
+					<li>We construct the player configuration object,
+						<code>window.RufflePlayer.config</code>.
+					</li>
+					<li>We configure what polyfills we want to enable. In this
+						example, we asked for static content to be replaced.
+					</li>
+					<li>We tell Ruffle where it's WASM binary is located.
+						This must match the location where you are storing
+						<code>ruffle.js</code>.
+					</li>
+					<li>We include <code>ruffle.js</code>, which starts the
+						process of polyfilling Flash.
+					</li>
+				</ol>
+
+				<p><code>ruffle.js</code> may also be loaded <code>async</code>
+					or <code>defer</code> - it will run all polyfills when
+					loaded. However, because Ruffle is also shipped as an
+					extension, it is important that your local configuration
+					is present before
+					<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event"><code>DOMContentLoaded</code></a>
+					has been fired. Ruffle for Users may run on your site, and
+					this ensures that your local configuration is respected if
+					the extension runs instead of your version.
+				</p>
+
+				<h3>Dynamic Flash content</h3>
+
+				<p>The above configuration is suitable for websites with static
+					Flash content and no Flash detection. However, if you want
+					to selectively enable Ruffle for specific content, you will
+					need to use the API.
+				</p>
 			</div>
-		</header>
+		</section>
 	</main>
 </body>
 

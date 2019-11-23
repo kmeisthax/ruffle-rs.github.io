@@ -13,3 +13,7 @@ $Container--lg: 1020px;
         max-width: $Container--lg;
     }
 }
+
+.Container-content {
+    @include make-Column--with_gutter(12);
+}
