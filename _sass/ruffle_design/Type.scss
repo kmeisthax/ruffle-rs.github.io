@@ -1,5 +1,6 @@
 $Type--noto_sans: 'Noto Sans', sans-serif;
 $Type--palanquin: 'Palanquin', sans-serif;
+$Type--ubuntu_mono: 'Ubuntu Mono', monospace;
 
 $Type-weight--medium: 500;
 $Type-weight--semibold: 600;
@@ -63,4 +64,23 @@ h6, .h6 {
     font-size: $Type-size--paragraph;
     line-height: 24px;
     margin: 4px 0;
+}
+
+pre {
+    font-family: $Type--ubuntu_mono;
+    font-size: $Type-size--paragraph;
+    line-height: 24px;
+
+    background-color: $Color--hero_primary;
+    color: $Color--body_primary;
+
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    width: 100%;
+    overflow: auto;
+}
+
+code {
+    font-family: $Type--ubuntu_mono;
 }
