@@ -1,0 +1,64 @@
+$Documentation--breakpoint: $Viewport--md;
+$Documentation--section_padding: 50px;
+
+.Documentation {
+    @extend .clearfix;
+}
+
+.Documentation-table_of_contents {
+    @include make-Column--with_gutter_min(3, $Documentation--breakpoint);
+
+    position: sticky;
+    top: $SiteHeader-banner--height;
+    max-height: calc(100vh - #{$SiteHeader-banner--height});
+    overflow: auto;
+
+    margin-top: $Documentation--section_padding;
+
+    ul {
+        display: none;
+
+        list-style: none inside none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        border-top: 1px solid $Color--hero_primary;
+    }
+
+    > ul > li:first-child {
+        border-top-width: 0;
+    }
+
+    a {
+        display: block;
+        padding: 5px 0 9px;
+
+        text-decoration: none;
+    }
+
+    @media (min-width: $Documentation--breakpoint) {
+        ul {
+            display: block;
+        }
+    }
+}
+
+.Documentation-toc_reveal {
+    @media (min-width: $Documentation--breakpoint) {
+        display: none;
+    }
+}
+
+.Documentation-content {
+    @include make-Column--with_gutter_min(9, $Documentation--breakpoint);
+
+    @media (min-width: $Documentation--breakpoint) {
+        margin-top: $Documentation--section_padding;
+
+        > *:first-child {
+            margin-top: 0px;
+        }
+    }
+}

@@ -62,8 +62,8 @@ title: Ruffle
 			</div>
 		</header>
 
-		<section class="Container">
-			<div class="Container-content">
+		<section class="Documentation">
+			{% capture content %}
 				<h1>Get Ruffle Player</h1>
 				<p>
 					Adobe has called it: Flash Player will reach end-of-life in
@@ -72,7 +72,7 @@ title: Ruffle
 				</p>
 
 				<div class="DownloadChip">
-					<h3>Ruffle for Users</h3>
+					<h2 class="h3">Ruffle for Users</h3>
 					<p>Extension install coming soon</p>
 				</div>
 
@@ -87,7 +87,7 @@ title: Ruffle
 				<h2>For Web Developers</h2>
 				
 				<div class="DownloadChip">
-					<h3>Ruffle for Websites</h3>
+					<span class="h3">Ruffle for Websites</span>
 					<p>Stand-alone library coming soon</p>
 				</div>
 
@@ -144,6 +144,15 @@ title: Ruffle
 					to selectively enable Ruffle for specific content, you will
 					need to use the API.
 				</p>
+			{% endcapture %}
+			
+			<div class="Documentation-table_of_contents">
+				<button class="Documentation-toc_reveal" type="button">Skip To Section</button>
+				{% include toc.html html=content sanitize=true h_min = 1 %}
+			</div>
+
+			<div class="Documentation-content">
+				{{content}}
 			</div>
 		</section>
 	</main>
