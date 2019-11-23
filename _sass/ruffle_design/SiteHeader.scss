@@ -8,7 +8,7 @@ $SiteHeader-banner--height: 50px;
     top: 0;
     width: 100%;
 
-    z-index: 2;
+    z-index: $Stacking--site_header_level;
 
     &.is-SiteHeader--at_top {
         background: transparent;

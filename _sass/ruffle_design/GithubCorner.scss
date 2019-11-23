@@ -5,7 +5,7 @@ $GithubCorner--width: 150px;
     top: 0;
     right: 0;
 
-    z-index: 1;
+    z-index: $Stacking--github_corner_level;
 }
 
 .github-corner svg {
