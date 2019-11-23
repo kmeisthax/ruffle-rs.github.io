@@ -5,10 +5,12 @@ $Type-weight--medium: 500;
 $Type-weight--semibold: 600;
 $Type-weight--bold: 700;
 
+$Type-size--paragraph: 18px;
+
 body {
     font-family: $Type--palanquin;
     font-weight: $Type-weight--medium;
-    font-size: 18px;
+    font-size: $Type-size--paragraph;
     line-height: 24px;
 }
 
@@ -58,7 +60,7 @@ h5, .h5 {
 h6, .h6 {
     font-family: $Type--noto_sans;
     font-weight: $Type-weight--bold;
-    font-size: 18px;
+    font-size: $Type-size--paragraph;
     line-height: 24px;
     margin: 4px 0;
 }

@@ -1,0 +1,11 @@
+button {
+    @include make-Color--brand_colorway;
+    
+    font-family: $Type--palanquin;
+    font-weight: $Type-weight--semibold;
+    font-size: $Type-size--paragraph;
+
+    border-width: 0px;
+    border-radius: 5px;
+    padding: 7px 15px;
+}

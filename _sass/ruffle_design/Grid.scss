@@ -5,6 +5,13 @@ $Grid--gutter_width: 15px;
     width: $column_count * $Grid--column_count;
 }
 
+@mixin make-Column--min($column_count, $break_viewport) {
+    @media (min-width: $break_viewport) {
+        float: left;
+        width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
+    }
+}
+
 @mixin make-Column--with_gutter($column_count) {
     float: left;
     width: calc(#{($column_count / $Grid--column_count) * 100%} - #{$Grid--gutter_width * 2});
