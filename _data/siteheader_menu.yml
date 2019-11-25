@@ -1,0 +1,4 @@
+- title: source
+  url: https://github.com/ruffle-rs/ruffle
+- title: demo
+  url: http://ruffle-rs.s3-website-us-west-1.amazonaws.com/builds/web-demo/index.html?file=synj1.swf

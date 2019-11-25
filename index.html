@@ -10,17 +10,7 @@ title: Ruffle
 {%- include rds-head.html -%}
 
 <body>
-	<site-header class="SiteHeader">
-		<a href="/" class="SiteHeader-brand">
-			<img class="SiteHeader-brand_logo" src="assets/logo.svg">
-		</a>
-		<ul class="SiteHeader-menu">
-			<li><a href="{{ site.github_url }}">source</a></li>
-			<li><a
-					href="http://ruffle-rs.s3-website-us-west-1.amazonaws.com/builds/web-demo/index.html?file=synj1.swf">demo</a>
-			</li>
-		</ul>
-	</site-header>
+	{%- include header.html -%}
 	
 	<a href="{{ site.github_url }}" class="GithubCorner" aria-label="View source on GitHub">
 		<svg width="150"

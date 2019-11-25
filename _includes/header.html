@@ -1,9 +1,10 @@
-<header class="site-header" role="banner">
-
-  <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img
-        src="{{ "/assets/logo.png" | relative_url }}"></a>
-  </div>
-</header>
+<site-header class="SiteHeader">
+  <a href="/" class="SiteHeader-brand">
+    <img class="SiteHeader-brand_logo" src="assets/logo.svg">
+  </a>
+  <ul class="SiteHeader-menu">
+    {% for link in site.data.siteheader_menu %}
+      <li><a href="{{ link.url }}" class="SiteHeader-menu_link{% if page.url == link.url %} SiteHeader-menu_link--active{% endif %}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+</site-header>
